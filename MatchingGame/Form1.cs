@@ -184,5 +184,36 @@ namespace MatchingGame
             newForm.Show();
             this.Hide();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void newButton_Click(object sender, EventArgs e)
+        {
+            Form1 newForm = new Form1();
+            newForm.Show();
+            this.Hide();
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+        int seconds = 0;
+        int minutes = 0;
+        private void timerLabel_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            seconds++;
+            minutes = (int)Math.Floor((decimal)(seconds / 60));
+            timerLabel.Text = minutes.ToString() + ":" + (seconds % 60).ToString();
+
+        }
     }
 }

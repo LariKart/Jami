@@ -49,6 +49,9 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.quitBtn = new System.Windows.Forms.Button();
             this.menuButton = new System.Windows.Forms.Button();
+            this.newButton = new System.Windows.Forms.Button();
+            this.timerLabel = new System.Windows.Forms.Label();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -304,18 +307,52 @@
             this.menuButton.UseVisualStyleBackColor = true;
             this.menuButton.Click += new System.EventHandler(this.menuButton_Click);
             // 
+            // newButton
+            // 
+            this.newButton.Location = new System.Drawing.Point(635, 150);
+            this.newButton.Name = "newButton";
+            this.newButton.Size = new System.Drawing.Size(116, 47);
+            this.newButton.TabIndex = 3;
+            this.newButton.Text = "New Game";
+            this.newButton.UseVisualStyleBackColor = true;
+            this.newButton.Click += new System.EventHandler(this.newButton_Click);
+            // 
+            // timerLabel
+            // 
+            this.timerLabel.AutoSize = true;
+            this.timerLabel.BackColor = System.Drawing.Color.White;
+            this.timerLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.timerLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.timerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timerLabel.Location = new System.Drawing.Point(635, 225);
+            this.timerLabel.Name = "timerLabel";
+            this.timerLabel.Size = new System.Drawing.Size(121, 48);
+            this.timerLabel.TabIndex = 4;
+            this.timerLabel.Text = "00:00";
+            this.timerLabel.Click += new System.EventHandler(this.timerLabel_Click);
+            // 
+            // timer2
+            // 
+            this.timer2.Enabled = true;
+            this.timer2.Interval = 1000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 494);
+            this.Controls.Add(this.timerLabel);
+            this.Controls.Add(this.newButton);
             this.Controls.Add(this.menuButton);
             this.Controls.Add(this.quitBtn);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form1";
             this.Text = "Matching Game";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -341,6 +378,9 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button quitBtn;
         private System.Windows.Forms.Button menuButton;
+        private System.Windows.Forms.Button newButton;
+        private System.Windows.Forms.Label timerLabel;
+        private System.Windows.Forms.Timer timer2;
     }
 }
 
