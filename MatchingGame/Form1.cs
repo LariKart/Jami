@@ -167,7 +167,9 @@ namespace MatchingGame
             // any unmatched icons
             // That means the user won. Show a message and close the form
             MessageBox.Show("You matched all the icons!", "Congratulations");
-            Close();
+            Menu newForm = new Menu();
+            newForm.Show();
+            this.Hide();
         }
 
         private void quitBtn_Click(object sender, EventArgs e)
