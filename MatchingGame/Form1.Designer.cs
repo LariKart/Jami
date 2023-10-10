@@ -1,6 +1,6 @@
 ﻿namespace MatchingGame
 {
-    partial class Form1
+    partial class easyStage
     {
         /// <summary>
         /// Required designer variable.
@@ -337,7 +337,7 @@
             this.timer2.Interval = 1000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // Form1
+            // easyStage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -347,7 +347,7 @@
             this.Controls.Add(this.menuButton);
             this.Controls.Add(this.quitBtn);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "Form1";
+            this.Name = "easyStage";
             this.Text = "Matching Game";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

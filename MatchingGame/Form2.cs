@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MatchingGame
 {
-    public partial class Form2 : Form
+    public partial class Menu : Form
     {
-        public Form2()
+        public Menu()
         {
             InitializeComponent();
         }
@@ -21,13 +21,15 @@ namespace MatchingGame
 
         private void easyButton_Click(object sender, EventArgs e)
         {
-            Form1 newForm = new Form1();
+            easyStage newForm = new easyStage();
             newForm.Show();
             this.Hide();
         }
         private void mediumButton_Click(object sender, EventArgs e)
         {
-
+            MediumStage newForm = new MediumStage();
+            newForm.Show();
+            this.Hide();
         }
 
         private void hardButton_Click(object sender, EventArgs e)
@@ -48,4 +50,5 @@ namespace MatchingGame
             }
         }
     }
-}
+
+    }

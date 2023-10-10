@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MatchingGame
 {
-    public partial class easyStage : Form
+    public partial class MediumStage : Form
     {
-        public easyStage()
+        public MediumStage()
         {
             InitializeComponent();
             AssignIconsToSquares();
@@ -35,7 +35,11 @@ namespace MatchingGame
         List<string> icons = new List<string>()
     {
         "!", "!", "N", "N", ",", ",", "k", "k",
-        "b", "b", "v", "v", "w", "w", "z", "z"
+        "b", "b", "v", "v", "w", "w", "z", "z", 
+        "y", "y", "R", "R", "o", "o", "E", "E",
+        "i", "i", "x", "x", "g", "g", "s", "s",
+        "p", "p", "q", "q", "Y", "Y", "d", "d",
+        "h", "h", "L", "L", "a", "a", "f", "f"
     };
         /// <summary>
         /// Assign each icon from the list of icons to a random square
@@ -185,14 +189,14 @@ namespace MatchingGame
             this.Hide();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form3_Load(object sender, EventArgs e)
         {
 
         }
 
         private void newButton_Click(object sender, EventArgs e)
         {
-            easyStage newForm = new easyStage();
+            MediumStage newForm = new MediumStage();
             newForm.Show();
             this.Hide();
         }
@@ -201,13 +205,13 @@ namespace MatchingGame
         {
 
         }
-        int seconds = 0;
-        int minutes = 0;
+        
         private void timerLabel_Click(object sender, EventArgs e)
         {
             
         }
-
+        int seconds = 0;
+        int minutes = 0;
         private void timer2_Tick(object sender, EventArgs e)
         {
             seconds++;

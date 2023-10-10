@@ -1,6 +1,6 @@
 ﻿namespace MatchingGame
 {
-    partial class Form2
+    partial class Menu
     {
         /// <summary>
         /// Required designer variable.
@@ -92,7 +92,7 @@
             this.highScoreButton.UseVisualStyleBackColor = true;
             this.highScoreButton.Click += new System.EventHandler(this.highScoreButton_Click);
             // 
-            // Form2
+            // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -103,7 +103,7 @@
             this.Controls.Add(this.hardButton);
             this.Controls.Add(this.mediumButton);
             this.Controls.Add(this.easyButton);
-            this.Name = "Form2";
+            this.Name = "Menu";
             this.Text = "Matching Game - Menu";
             this.ResumeLayout(false);
 
