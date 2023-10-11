@@ -52,6 +52,12 @@
     <Compile Include="Easymode.Designer.cs">
       <DependentUpon>Easymode.cs</DependentUpon>
     </Compile>
+    <Compile Include="Scoreboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scoreboard.Designer.cs">
+      <DependentUpon>Scoreboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Hardmode.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Scoreboard.resx">
+      <DependentUpon>Scoreboard.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
