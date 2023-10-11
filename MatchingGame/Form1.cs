@@ -171,20 +171,15 @@ namespace MatchingGame
             }
             
             timer2.Stop();
-            score = score+10;
-            
-            
-            
-       
-            
-
+            score = score + 10;
+            timer3 = timer2;
             // If the loop didn’t return, it didn't find
             // any unmatched icons
             // That means the user won. Show a message and close the form
             MessageBox.Show("You matched all the icons!", "Congratulations");
             Close();
         }
-        
+        int score = 0;
 
         private void quitBtn_Click(object sender, EventArgs e)
         {
@@ -220,7 +215,7 @@ namespace MatchingGame
         }
         int seconds = 0;
         int minutes = 0;
-        int time = 0;
+        
         private void timerLabel_Click(object sender, EventArgs e)
         {
             
@@ -253,10 +248,10 @@ namespace MatchingGame
             
             
         }
-        int score = 0;
-        private void scoreLabel_Click(object sender, EventArgs e)
+        int timescore = 0;
+        private void timer3Label_Tick(object sender, EventArgs e)
         {
-            
+         
         }
     }
 }
