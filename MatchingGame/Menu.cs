@@ -34,7 +34,9 @@ namespace MatchingGame
 
         private void hardButton_Click(object sender, EventArgs e)
         {
-
+            HardMode newForm = new HardMode();
+            newForm.Show();
+            this.Hide();
         }
 
         private void highScoreButton_Click(object sender, EventArgs e)
