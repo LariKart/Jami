@@ -12,6 +12,7 @@ namespace MatchingGame
 {
     public partial class easyStage : Form
     {
+        public int score;
         public easyStage()
         {
             InitializeComponent();
@@ -102,6 +103,7 @@ namespace MatchingGame
 
                 // Check to see if the player won
                 CheckForWinner();
+                
 
                 // If the player clicked two matching icons, keep them 
                 // black and reset firstClicked and secondClicked 
@@ -110,7 +112,12 @@ namespace MatchingGame
                 {
                     firstClicked = null;
                     secondClicked = null;
+                    score = score + 10;
                     return;
+                }
+                if (score >= 10)
+                {
+                    score = score - 10;
                 }
 
                 // If the player gets this far, the player 
@@ -142,6 +149,7 @@ namespace MatchingGame
             // clicked, the program knows it's the first click
             firstClicked = null;
             secondClicked = null;
+
         }
         /// <summary>
         /// Check every icon to see if it is matched, by 
@@ -162,7 +170,10 @@ namespace MatchingGame
                         return;
                 }
             }
-
+            int score = 0;
+            timer2.Stop();
+            score = score + 10;
+            timer3 = timer2;
             // If the loop didn’t return, it didn't find
             // any unmatched icons
             // That means the user won. Show a message and close the form
@@ -187,11 +198,6 @@ namespace MatchingGame
             this.Hide();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void newButton_Click(object sender, EventArgs e)
         {
             easyStage newForm = new easyStage();
@@ -207,11 +213,11 @@ namespace MatchingGame
         int minutes = 0;
         private void timerLabel_Click(object sender, EventArgs e)
         {
-            
-        }
 
+        }
         private void timer2_Tick(object sender, EventArgs e)
         {
+            scoreLabel.Text = score.ToString();
             seconds++;
             minutes = (int)Math.Floor((decimal)(seconds / 60));
             timerLabel.Text = "00:0" + (seconds % 60).ToString();
@@ -219,13 +225,21 @@ namespace MatchingGame
             { timerLabel.Text = ("00:" + (seconds % 60).ToString()); }
             if (minutes > 0)
             {
-                timerLabel.Text = "0" + minutes.ToString() + ":0" + (seconds % 60).ToString();
-                if (seconds >= 10)
+                timerLabel.Text = ("0" + minutes.ToString() + ":" + "0" + (seconds % 60).ToString());
+                if (seconds % 60 >= 10)
                 {
                     timerLabel.Text = "0" + minutes.ToString() + ":" + (seconds % 60).ToString();
                 }
-            }
+                if (minutes >= 10)
+                {
+                    timerLabel.Text = (minutes.ToString() + ":" + "0" + (seconds % 60).ToString());
+                    if (seconds % 60 >= 10)
+                    {
+                        timerLabel.Text = minutes.ToString() + ":" + (seconds % 60).ToString();
+                    }
+                }
 
+            }
         }
     }
 }

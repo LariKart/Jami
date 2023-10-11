@@ -50,8 +50,11 @@
             this.quitBtn = new System.Windows.Forms.Button();
             this.menuButton = new System.Windows.Forms.Button();
             this.newButton = new System.Windows.Forms.Button();
-            this.timerLabel = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timerLabel = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.scoreLabel = new System.Windows.Forms.Label();
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -317,39 +320,60 @@
             this.newButton.UseVisualStyleBackColor = true;
             this.newButton.Click += new System.EventHandler(this.newButton_Click);
             // 
+            // timer2
+            // 
+            this.timer2.Enabled = true;
+            this.timer2.Interval = 10;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
             // timerLabel
             // 
             this.timerLabel.AutoSize = true;
-            this.timerLabel.BackColor = System.Drawing.Color.White;
-            this.timerLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.timerLabel.BackColor = System.Drawing.Color.Transparent;
             this.timerLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.timerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timerLabel.Location = new System.Drawing.Point(635, 225);
+            this.timerLabel.Location = new System.Drawing.Point(632, 216);
             this.timerLabel.Name = "timerLabel";
-            this.timerLabel.Size = new System.Drawing.Size(121, 48);
+            this.timerLabel.Size = new System.Drawing.Size(119, 46);
             this.timerLabel.TabIndex = 4;
             this.timerLabel.Text = "00:00";
             this.timerLabel.Click += new System.EventHandler(this.timerLabel_Click);
             // 
-            // timer2
+            // label17
             // 
-            this.timer2.Enabled = true;
-            this.timer2.Interval = 1000;
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(631, 281);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(120, 33);
+            this.label17.TabIndex = 5;
+            this.label17.Text = "Score";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // easyStage
+            // scoreLabel
+            // 
+            this.scoreLabel.AutoSize = true;
+            this.scoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scoreLabel.Location = new System.Drawing.Point(674, 333);
+            this.scoreLabel.Name = "scoreLabel";
+            this.scoreLabel.Size = new System.Drawing.Size(32, 36);
+            this.scoreLabel.TabIndex = 6;
+            this.scoreLabel.Text = "0";
+            this.scoreLabel.Click += new System.EventHandler(this.timer2_Tick);
+            // 
+            // Easymode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 494);
+            this.Controls.Add(this.scoreLabel);
+            this.Controls.Add(this.label17);
             this.Controls.Add(this.timerLabel);
             this.Controls.Add(this.newButton);
             this.Controls.Add(this.menuButton);
             this.Controls.Add(this.quitBtn);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "easyStage";
+            this.Name = "Easymode";
             this.Text = "Matching Game";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -379,8 +403,10 @@
         private System.Windows.Forms.Button quitBtn;
         private System.Windows.Forms.Button menuButton;
         private System.Windows.Forms.Button newButton;
-        private System.Windows.Forms.Label timerLabel;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Label timerLabel;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label scoreLabel;
+        private System.Windows.Forms.Timer timer3;
     }
 }
-

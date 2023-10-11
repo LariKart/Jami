@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,7 +42,9 @@ namespace MatchingGame
 
         private void highScoreButton_Click(object sender, EventArgs e)
         {
-
+            Scoreboard newForm = new Scoreboard();
+            newForm.Show();
+            this.Hide();
         }
 
         private void quitButton_Click(object sender, EventArgs e)

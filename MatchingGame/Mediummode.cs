@@ -12,6 +12,7 @@ namespace MatchingGame
 {
     public partial class MediumStage : Form
     {
+        public int score;
         public MediumStage()
         {
             InitializeComponent();
@@ -114,7 +115,12 @@ namespace MatchingGame
                 {
                     firstClicked = null;
                     secondClicked = null;
+                    score = score + 10;
                     return;
+                }
+                if (score >= 10)
+                {
+                    score = score - 10;
                 }
 
                 // If the player gets this far, the player 
@@ -166,7 +172,9 @@ namespace MatchingGame
                         return;
                 }
             }
-
+            timer2.Stop();
+            score = score + 10;
+            timer3 = timer2;
             // If the loop didn’t return, it didn't find
             // any unmatched icons
             // That means the user won. Show a message and close the form
@@ -216,6 +224,7 @@ namespace MatchingGame
         int minutes = 0;
         private void timer2_Tick(object sender, EventArgs e)
         {
+            scoreLabel.Text = score.ToString();
             seconds++;
             minutes = (int)Math.Floor((decimal)(seconds / 60));
             timerLabel.Text = "00:0" + (seconds % 60).ToString();
@@ -223,13 +232,23 @@ namespace MatchingGame
             { timerLabel.Text = ("00:" + (seconds % 60).ToString()); }
             if (minutes > 0)
             {
-                timerLabel.Text = "0" + minutes.ToString() + ":0" + (seconds % 60).ToString();
-                if (seconds >= 10)
+                timerLabel.Text = ("0" + minutes.ToString() + ":" + "0" + (seconds % 60).ToString());
+                if (seconds % 60 >= 10)
                 {
                     timerLabel.Text = "0" + minutes.ToString() + ":" + (seconds % 60).ToString();
                 }
+                if (minutes >= 10)
+                {
+                    timerLabel.Text = (minutes.ToString() + ":" + "0" + (seconds % 60).ToString());
+                    if (seconds % 60 >= 10)
+                    {
+                        timerLabel.Text = minutes.ToString() + ":" + (seconds % 60).ToString();
+                    }
+                }
+
             }
 
         }
+
     }
 }
