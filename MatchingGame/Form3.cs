@@ -13,10 +13,15 @@ namespace MatchingGame
 {
     public partial class Form3 : Form
     {
+        public string stats {  get; set; }
+
         public Form3()
         {
             InitializeComponent();
-        }
+          
+              
+            }
+        
 
         private void menuButton_Click(object sender, EventArgs e)
         {
@@ -26,9 +31,14 @@ namespace MatchingGame
 
         }
 
-        public void label1_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            int time;
+           
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+            time.Text = stats.ToString();
         }
     }
 }

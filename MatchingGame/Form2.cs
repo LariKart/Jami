@@ -12,6 +12,8 @@ namespace MatchingGame
 {
     public partial class Form2 : Form
     {
+        public string stats { get; set; }
+
         public Form2()
         {
             InitializeComponent();

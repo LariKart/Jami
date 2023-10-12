@@ -34,7 +34,7 @@
             this.clickLabel = new System.Windows.Forms.Label();
             this.attemptLabel = new System.Windows.Forms.Label();
             this.pairLabel = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.time = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -89,14 +89,14 @@
             this.pairLabel.Text = "Pairs";
             this.pairLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // time
             // 
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.Location = new System.Drawing.Point(203, 201);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 116);
-            this.label2.TabIndex = 6;
-            this.label2.Text = " ";
+            this.time.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.time.Location = new System.Drawing.Point(203, 201);
+            this.time.Name = "time";
+            this.time.Size = new System.Drawing.Size(119, 116);
+            this.time.TabIndex = 6;
+            this.time.Text = " ";
             // 
             // label3
             // 
@@ -128,11 +128,10 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 297);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(800, 450);
+            this.pictureBox1.Size = new System.Drawing.Size(269, 141);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
@@ -170,7 +169,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.time);
             this.Controls.Add(this.pairLabel);
             this.Controls.Add(this.attemptLabel);
             this.Controls.Add(this.clickLabel);
@@ -179,6 +178,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form3";
             this.Text = "Form3";
+            this.Load += new System.EventHandler(this.Form3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -191,7 +191,7 @@
         private System.Windows.Forms.Label clickLabel;
         private System.Windows.Forms.Label attemptLabel;
         private System.Windows.Forms.Label pairLabel;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label time;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,10 @@ namespace MatchingGame
 {
     public partial class Form1 : Form
     {
+        public Timer TimerFromForm1
+        {
+            get { return timer2; }
+        }
         public Form1()
         {
             InitializeComponent();
@@ -171,8 +176,11 @@ namespace MatchingGame
             }
             
             timer2.Stop();
-            score = score + 10;
-            timer3 = timer2;
+            score = score+10;
+           
+         
+            
+
             // If the loop didn’t return, it didn't find
             // any unmatched icons
             // That means the user won. Show a message and close the form
@@ -251,7 +259,42 @@ namespace MatchingGame
         int timescore = 0;
         private void timer3Label_Tick(object sender, EventArgs e)
         {
-         
+       
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form3 form = new Form3();
+            if (minutes == 0)
+            {
+                if (seconds < 10)
+                { form.stats = "00" + ":" + "0" + seconds.ToString(); }
+                if (seconds > 10)
+                {  form.stats = "00" + ":" + seconds.ToString(); }
+            }
+            if (minutes < 10)
+            {
+                if (seconds < 10)
+                {
+                    form.stats = "0" + minutes.ToString() + ":" + "0" + seconds.ToString();
+                }
+                if (seconds > 10)
+                {
+                    form.stats = "0" + minutes.ToString() + ":" + seconds.ToString();
+                }
+            }
+            if (minutes >= 10)
+            { 
+                if (seconds < 10)
+                {
+                    form.stats = minutes.ToString() + ":" + "0" + seconds.ToString(); 
+                }
+                if (seconds > 10)
+                {
+                    form.stats = minutes.ToString() + ":" + seconds.ToString();
+                }
+            }
+            
         }
     }
 }
